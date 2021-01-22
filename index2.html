@@ -1,19 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--
-Developer
-https://scharss.github.io/-->
 
 <head>
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-        window.OneSignal = window.OneSignal || [];
-        OneSignal.push(function() {
-            OneSignal.init({
-                appId: "66a2e00b-ff33-473e-96eb-4153fa5e8f96",
-            });
-        });
-    </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130429672-1"></script>
     <script>
@@ -26,34 +14,20 @@ https://scharss.github.io/-->
 
         gtag('config', 'UA-130429672-1');
     </script>
-
-
     <link rel="icon" href="img/confix.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-
-
-
-
-    <link rel="icon" href="img/confix.png">
-    <title>Tiendas Buro</title>
-    <!---->
-    <meta property="og:url" content="https://scharss.github.io/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Tiendas Buro" />
-    <meta property="og:description" content="Marketplace" />
-    <meta property="og:image" content="https://scharss.github.io/img/bot.png" />
-    <!---->
-
-
-
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <title>Buro</title>
+    <!--<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js">
+    </script>-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript" src="index.js"></script>
 
     <link href="css/main.css" rel="stylesheet" type="text/css" />
     <link href="css/mains.scss" rel="stylesheet" type="text/css" />
 
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         * {
             box-sizing: border-box;
@@ -146,15 +120,31 @@ https://scharss.github.io/-->
             }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--spreadsheet-->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        function SubForm() {
+            $.ajax({
+                url: 'https://api.apispreadsheets.com/data/6975/',
+                type: 'post',
+                data: $("#myForm").serializeArray(),
+                success: function() {
+                    alert("SU PEDIDO YA ESTÁ  EN CAMINO, PAGO EN EFECTIVO A CONTRA ENTREGA, GRACIAS POR LA COMPRA");
+                },
+                error: function() {
+                    alert("ERROR :(")
+                }
+
+            });
+
+        }
+    </script>
+
 </head>
 
 <body>
-
-
-
-
-
+    <!--Barra de Navegación-->
     <nav class="navbar navbar-expand-md  sticky-top sticky-offset text-light " style="background-color: black">
         <a class="navbar-brand" href="index.html"><img src="img/log.png" alt="logo"></a>
         <button class="navbar-toggler bg-light navbar-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -188,25 +178,23 @@ https://scharss.github.io/-->
 
         </div>
     </nav>
-
-
-
+    <!--Fin Barra de Navegación-->
     <!--Slider******************************************-->
     <div class="mySlides fade">
         <div class="numbertext">1 / 3</div>
-        <img src="images/slider2.png" style="width:100%">
+        <img src="img/slider2.png" style="width:100%">
         <div class="text">Caption Text</div>
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">2 / 3</div>
-        <img src="images/slider3.png" style="width:100%">
+        <img src="img/slider3.png" style="width:100%">
         <div class="text">Caption Two</div>
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">3 / 3</div>
-        <img src="images/slider1.png" style="width:100%">
+        <img src="img/slider1.png" style="width:100%">
         <div class="text">Caption Three</div>
     </div>
 
@@ -218,7 +206,8 @@ https://scharss.github.io/-->
         <span class="dot"></span>
         <span class="dot"></span>
     </div>
-    <!--Slider*******************************************-->
+    <!--Fin Slider**************************************-->
+    <!--Categorías -->
     <section id="store">
         <div class="container">
             <div class="row">
@@ -238,219 +227,161 @@ https://scharss.github.io/-->
         </div>
     </section>
     <!--**********************-->
-    <section id="local1">
+    <!--Fin Categorías-->
+    <section>
         <div class="container">
             <div class="row">
-                <!--primer columna-->
+                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
 
-                <div class="col-12col-ms-12 col-md-12 col-lg-6 col-xl-6">
-                    <!--Primera fila-->
-                    <div class="row">
-                        <div class="col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6">
-                            <a href="img/gamer/6.png"><img class="img-fluid z-depth-1" src="img/gamer/6.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117379576" id="link"><strong>  Gorra Roja $25.000</strong></a>
-                            <a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a>
-                        </div>
-                        <div class="col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6">
-                            <a href="img/comida/chocoramo.png"><img class="img-fluid z-depth-1" src="img/comida/chocoramo.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117568189" id="link"><strong>  Chocoramo  Colombia $1.400</strong></a><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117568189"><strong>Mensaje</strong></a>
-                        </div>
-                    </div>
-                    <!--fin Primera fila-->
+                    <p>
+                        <a href=""><img class="img-fluid z-depth-1" src="img/comida/harinapan.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
+                    </p>
+                    <p><label>Harina Pan</label></P>
+                    <p><label>Precio: $ 1400 unidad</label></P>
+                    <p><label>Unidades a Comprar:</label>
+                        <input type="number" id="cmanzana" value="0" style="width:50px;height:30px"></p>
 
-                    <!--segunda fila-->
-                    <div class="row">
-                        <div class="col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6">
-                            <a href="img/comida/harinapan.png"><img class="img-fluid z-depth-1" src="img/comida/harinapan.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117568189" id="link"><strong> Harina Pan 1000g tradicional $4.000</strong></a><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117568189"><strong>Mensaje</strong></a>
-                        </div>
-                        <div class="col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6">
-                            <a href="img/gamer/8.png"><img class="img-fluid z-depth-1" src="img/gamer/8.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117379576" id="link"><strong>  Gorra Negra $25.000</strong></a><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a>
-                        </div>
-                    </div>
-                    <!--fin segundafila-->
+                    <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnmanzana(), carritollleno()"> Agregar </button></button><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a></p>
+
+
                 </div>
+                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
 
-                <!--fin primer columna-->
+                    <p>
+                        <a href=""><img class="img-fluid z-depth-1" src="img/comida/huevos.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
+                    </p>
+                    <p><label>Huevos</label></P>
+                    <p><label>Precio: $ 350 Unidad</label>
+                        <p><label>Unidades a Comprar:</label>
+                            <input type="number" id="cnaranja" value="0" style="width:50px;height:30px"></p>
 
-                <!--segunda columna-->
-                <div class="col-12col-ms-12 col-md-12 col-lg-6 col-xl-6">
-                    <!--Primera fila-->
-                    <div class="row">
-                        <div class="col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6">
-                            <a href="img/99.jpg"><img class="img-fluid z-depth-1" src="img/99.jpg" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117379576" id="link"><strong> Gorra Nintendo $25.000</strong></a><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a>
-                        </div>
-                        <div class="col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6">
-                            <a href="img/a11.png"><img class="img-fluid z-depth-1" src="img/a11.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117379576" id="link"><strong>  Camisa Blanca $25.000</strong></a><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a>
-                        </div>
-                    </div>
-                    <!--fin Primera fila-->
+                        <p><button type="button" class="btn btn-primary btn-sm" onclick="validarbtnnaranja()"> Agregar </button></button><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a></p>
 
-                    <!--segunda fila-->
-                    <div class="row">
-                        <div class="col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6">
-                            <a href="img/comida/manzanapostobonlitro.png"><img class="img-fluid z-depth-1" src="img/comida/manzanapostobonlitro.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117568189" id="link"><strong> Gaseosa Postobón  $2.800</strong></a><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117568189"><strong>Mensaje</strong></a>
-                        </div>
-                        <div class="col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6">
-                            <a href="img/gamer/11.png"><img class="img-fluid z-depth-1" src="img/gamer/11.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117379576" id="link"><strong>  Gorra Azul $25.000</strong></a><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a>
-                        </div>
-                    </div>
-                    <!--fin segundafila-->
                 </div>
+                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
+                    <p>
+                        <a href=""><img class="img-fluid z-depth-1" src="img/comida/manzanapostobonlitro.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
+                    </p>
+                    <p><label>Gaseosa</label></P>
+                    <p><label>Precio: $ 2000 Litro</label>
 
-                <!--fin segunda columna-->
+                        <p><label>Unidades a Comprar:</label>
+                            <input type="number" id="cuva" value="0" style="width:50px;height:30px"></p>
+                        <p><button type="button" class="btn btn-primary btn-sm" onclick="validarbtnuva()"> Agregar </button></button><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a></p>
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <hr>
+    <section id="carrito">
+        <div class="container">
+            <strong><p> Carrito</p></strong>
+            <div class="row">
+
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <strong><p>Producto</p></strong>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <strong><p>Cantidad</p></strong>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <strong><p>Costo</p></strong>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+
+                </div>
             </div>
         </div>
     </section>
-    <br>
+    <section id="cartsection">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <p id="nombremanzana"></p>
+                    <p id="nombrenaranja"></p>
+                    <p id="nombruva"></p>
+                </div>
+
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <p id="totalmanzanas"></p>
+                    <p id="totalnaranjas"></p>
+                    <p id="totaluvas"></p>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <p id="costomanzanas"></p>
+                    <p id="costonaranjas"></p>
+                    <p id="costouvas"></p>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <p id="borrarmanzanas"></p>
+                    <p id="borrarnaranjas"> </p>
+                    <p id="borraruvas"> </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="total">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <strong><label>Total</label></strong> <strong><p id="Total"></p></strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--formulario-->
+    <!--spreadsheed-->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <strong><p id="vacio">Carrito Vacío</p></strong>
+                <form id="myForm">
+                    <label>Nombre</label>
+                    <br/>
+                    <input class="form-control" name="Nombre" />
+                    <br/>
+                    <label>Dirección/Barrio</label>
+                    <br/>
+                    <input class="form-control" name="Dirección" />
+                    <br/>
+                    <label>WhatsApp</label>
+                    <br/>
+                    <input class="form-control" name="WhatsApp" />
+                    <br/>
+                    <label>Mensaje</label>
+                    <br/>
+                    <input class="form-control" name="Mensaje" />
+                    <br/>
+                    <!--inputs ocultos-->
+                    <br/>
+                    <input type="hidden" class="form-control" id="numerodemanzanas" name="Manzanas" placeholder="" />
+                    <br/>
+                    <input type="hidden" class="form-control" id="numerodeuvas" name="Uvas" placeholder="">
+                    <br/>
+                    <input type="hidden" class="form-control" id="numerodenaranjas" name="Naranjas" placeholder="">
+                    <br>
+                </form>
+                <button class="btn btn-primary btn-sm " onclick="SubForm()">Comprar</button>
+                <button type="button" class="btn btn-dark btn-sm" onclick="restear()">Reset</button>
+            </div>
+        </div>
+    </div>
     <!--*************************-->
-
-
-    <section id="local2">
-        <div class="container">
-            <div class="row">
-                <!--Primer columna-->
-                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
-                    <div class="card">
-                        <div class="row">
-                            <!--Primer fila-->
-                            <a href="img/gamer/2.png"><img class="img-fluid z-depth-1" src="img/gamer/2.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117379576" id="link"><strong> Gorra Amarilla $25.000 </strong></a><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a>
-
-                        </div>
-
-                    </div>
-                    <!--fin card-->
-                </div>
-                <!--segunda columna-->
-                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
-                    <div class="card">
-                        <div class="row">
-                            <!--primer fila-->
-                            <a href="img/coder_shirts/a12.png"><img class="img-fluid z-depth-1" src="img/coder_shirts/a12.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117379576" id="link"><strong> Camisa Blanca $25.000</strong></a><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a>
-
-                        </div>
-
-
-                    </div>
-                    <!--fin card-->
-                </div>
-                <!--tercer columna-->
-                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
-                    <div class="card">
-                        <div class="row">
-                            <!--1er fila-->
-                            <a href="img/gamer/10.png"><img class="img-fluid z-depth-1" src="img/gamer/10.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117379576" id="link"><strong> Gorra Play Station $25.000 </strong></a><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a>
-
-                        </div>
-
-
-                    </div>
-                    <!--fin card-->
-                </div>
-            </div>
-
-
-        </div>
-    </section>
-    <!--************************************-->
-
-    <!--**********************-->
-    <!--**********************-->
-    <section id="local3">
-        <div class="container">
-            <div class="row">
-                <!--primer columna-->
-
-                <div class="col-12col-ms-12 col-md-12 col-lg-6 col-xl-6">
-                    <!--Primera fila-->
-                    <div class="row">
-                        <div class="col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6">
-                            <a href="img/comida/huevos.png"><img class="img-fluid z-depth-1" src="img/comida/huevos.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117568189" id="link"><strong> Huevos  Colombia unidad $350</strong></a>
-                            <a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117568189"><strong>Mensaje</strong></a>
-                        </div>
-                        <div class="col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6">
-                            <a href="img/coder_shirts/a18.png"><img class="img-fluid z-depth-1" src="img/coder_shirts/a18.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117379576" id="link"><strong> Camisa Blanca $25.000</strong></a>
-                            <a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a>
-                        </div>
-                    </div>
-                    <!--fin Primera fila-->
-
-                    <!--segunda fila-->
-                    <div class="row">
-                        <div class="col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6">
-                            <a href="img/geek/11.png"><img class="img-fluid z-depth-1" src="img/geek/11.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117379576" id="link"><strong> Camisa Blanca $25.000</strong></a>
-                            <a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a>
-                        </div>
-                        <div class="col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6">
-                            <a href="img/coder_shirts/a17.png"><img class="img-fluid z-depth-1" src="img/coder_shirts/a17.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117379576" id="link"><strong> Camisa Blanca $25.000</strong></a>
-                            <a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a>
-                        </div>
-                    </div>
-                    <!--fin segundafila-->
-                </div>
-
-                <!--fin primer columna-->
-
-                <!--segunda columna-->
-                <div class="col-12col-ms-12 col-md-12 col-lg-6 col-xl-6">
-                    <!--Primera fila-->
-                    <div class="row">
-                        <div class="col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6">
-                            <a href="img/coder_shirts/a14.png"><img class="img-fluid z-depth-1" src="img/coder_shirts/a14.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117379576" id="link"><strong> Camisa Blanca $25.000</strong></a>
-                            <a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a>
-                        </div>
-                        <div class="col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6">
-                            <a href="img/gamer/4.png"><img class="img-fluid z-depth-1" src="img/gamer/4.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117379576" id="link"><strong>  Gorra Typical $25.000</strong></a><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a>
-                        </div>
-                    </div>
-                    <!--fin Primera fila-->
-
-                    <!--segunda fila-->
-                    <div class="row">
-                        <div class="col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6">
-                            <a href="img/gamer/3.png"><img class="img-fluid z-depth-1" src="img/gamer/3.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117379576" id="link"><strong> Camisa Blanca $25.000</strong></a><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a>
-                        </div>
-                        <div class="col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6">
-                            <a href="https://wa.me/573117379576"><img class="img-fluid z-depth-1" src="img/a10.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                            <a href="https://wa.me/573117379576" id="link"><strong>  Camisa Blanca $25.000</strong></a><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a>
-                        </div>
-                    </div>
-                    <!--fin segundafila-->
-                </div>
-
-                <!--fin segunda columna-->
-            </div>
-        </div>
-    </section>
-    <br>
-    <!--*************************-->
-
-
-    <a class="coded-on-replit" href="https://wa.me/573117379576" target="_blank"><img src="img/wat.png" alt="replit" />
-    </a>
-
-
-
-    <script src="js/jquery-3.4.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <br>
-    <br>
 
     <!--Slider************************-->
     <script>
@@ -478,19 +409,28 @@ https://scharss.github.io/-->
     </script>
     <!--Slider*************************-->
 
-    <div class="footer">
-        <p> Buro 2021
-            <a href="https://www.facebook.com/buroprojekt" id="link"> <i class="fa fa-facebook-f" style="font-size:20px;color:blue"></i></a>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js ">
+    </script>
+    <script type="text/javascript " src="index.js "></script>
+
+    <!--
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js " integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n " crossorigin="anonymous "></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js " integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 " crossorigin="anonymous "></script>
 
 
-            <a href="https://www.instagram.com/buroprojekt/" id="link"> <i class="fa fa-instagram" style="font-size:20px;color:red"></i></a>
+
+    <a class="coded-on-replit" href="https://wa.me/573117379576" target="_blank"><img src="img/wat.png" alt="replit" />
+    </a>
+    <br>
+    <footer id="footer">
+        Buro
+        <a href="https://www.facebook.com/buroprojekt" id="link"> <i class="fa fa-facebook-f" style="font-size:20px;color:blue"></i></a>
 
 
-            <br>
-        </p>
-
-    </div>
-
+        <a href="https://www.instagram.com/buroprojekt/" id="link"> <i class="fa fa-instagram" style="font-size:20px;color:red"></i></a>
+        2021
+    </footer>
 
 </body>
 
