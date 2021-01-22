@@ -74,13 +74,13 @@ body {
     align-items: center;
     color: white;
     text-decoration: none;
-    background-color: rgb(17, 29, 44);
+    
     border-radius: 6px;
     font-size: 12px;
 }
 
 .coded-on-replit img {
-    width: 20px;
+    width: 50px;
     margin-right: 4px;
     height: auto;
 }
