@@ -30,7 +30,7 @@ function crearusuario(manzana, cmanzana) {
 console.log(t);*/
 
 function manzana() {
-    document.getElementById("nombremanzana").innerHTML = "Torta"
+    document.getElementById("nombremanzana").innerHTML = "Harina Pan"
     var candidadmanzana = Number(document.getElementById("cmanzana").value);
     document.getElementById("totalmanzanas").innerHTML = candidadmanzana;
     var costomanzana = candidadmanzana * preciomanzana;
@@ -51,7 +51,7 @@ function borrarmanzanas() {
 //naranjas
 function naranja() {
 
-    document.getElementById("nombrenaranja").innerHTML = "Postre"
+    document.getElementById("nombrenaranja").innerHTML = "Huevos"
     var candidadmanzana = Number(document.getElementById("cnaranja").value);
     document.getElementById("totalnaranjas").innerHTML = candidadmanzana;
     var costomanzana = candidadmanzana * precionaranja;
@@ -72,7 +72,7 @@ function borrarnaranjas() {
 //Uvas
 function uva() {
 
-    document.getElementById("nombruva").innerHTML = "Golosinas"
+    document.getElementById("nombruva").innerHTML = "Gaseosa"
     var candidadmanzana = Number(document.getElementById("cuva").value);
     document.getElementById("totaluvas").innerHTML = candidadmanzana;
     var costomanzana = candidadmanzana * preciouva;
