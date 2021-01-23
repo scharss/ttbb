@@ -168,7 +168,7 @@ function alerta() {
 }
 
 function restear() {
-    location.href = 'https://scharss.github.io/sch/'
+    location.href = 'https://scharss.github.io/ttbb/'
 
 }
 
