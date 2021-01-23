@@ -140,7 +140,47 @@
 
         }
     </script>
-
+    <!--SlickSlider-->
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+    <style type="text/css">
+        html,
+        * {
+            box-sizing: border-box;
+        }
+        
+        .slider {
+            width: 90%;
+            margin: 10px auto;
+        }
+        
+        .slick-slide {
+            margin: 0px 0px;
+        }
+        
+        .slick-slide img {
+            width: 100%;
+        }
+        
+        .slick-prev:before,
+        .slick-next:before {
+            color: black;
+        }
+        
+        .slick-slide {
+            transition: all ease-in-out .3s;
+            opacity: .2;
+        }
+        
+        .slick-active {
+            opacity: .5;
+        }
+        
+        .slick-current {
+            opacity: 1;
+        }
+    </style>
+    <!--Fin Slick Slider-->
 </head>
 
 <body>
@@ -156,10 +196,10 @@
                     <a class="nav-link text-white" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="https://wa.me/573117379576">Mercado</a>
+                    <a class="nav-link text-white" href="#alimentos">Alimentos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#local2">Moda</a>
+                    <a class="nav-link text-white" href="#vestuario">Vestuario</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="https://meet.jit.si/buroprojekt">Video Chat</a>
@@ -212,69 +252,83 @@
         <div class="container">
             <div class="row">
                 <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
-                    <a href="https://scharss.github.io/ttbb"><img src="img/ropa.png" alt=""></a>
+                    <a href="#vestuario"><img src="img/ropa.png" alt=""></a>
                 </div>
                 <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
-                    <a href="https://scharss.github.io/ttbb"><img src="img/comida.png" alt=""></a>
+                    <a href="#alimentos"><img src="img/comida.png" alt=""></a>
                 </div>
                 <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
-                    <a href="https://scharss.github.io/ttbb"><img src="img/ropa.png" alt=""></a>
+                    <a href="#vestuario"><img src="img/ropa.png" alt=""></a>
                 </div>
                 <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
-                    <a href="https://scharss.github.io/ttbb"><img src="img/comida.png" alt=""></a>
+                    <a href="#alimentos"><img src="img/comida.png" alt=""></a>
                 </div>
             </div>
         </div>
     </section>
     <!--**********************-->
     <!--Fin Categorías-->
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
+    <!--SlickSLider-->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-ms-12 col-md-12 col-lg-6 col-xl-6">
+                <h5 id="alimentos"><strong>Alimentos</strong></h5>
+                <section class="lazy slider">
 
-                    <p>
-                        <a href=""><img class="img-fluid z-depth-1" src="img/comida/harinapan.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                    </p>
-                    <p><label>Harina Pan</label></P>
-                    <p><label>Precio: $ 1400 unidad</label></P>
-                    <p><label>Unidades a Comprar:</label>
-                        <input type="number" id="cmanzana" value="0" style="width:50px;height:30px"></p>
-
-                    <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnmanzana(), carritollleno()"> Agregar </button></button><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a></p>
-
-
-                </div>
-                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
-
-                    <p>
-                        <a href=""><img class="img-fluid z-depth-1" src="img/comida/huevos.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                    </p>
-                    <p><label>Huevos</label></P>
-                    <p><label>Precio: $ 350 Unidad</label>
+                    <div>
+                        <img src="img/comida/harinapan.png" alt="">
+                        <p><label>Harina Pan</label></P>
+                        <p><label>Precio: $ 1400 unidad</label></P>
                         <p><label>Unidades a Comprar:</label>
-                            <input type="number" id="cnaranja" value="0" style="width:50px;height:30px"></p>
+                            <input type="number" id="cmanzana" value="0" style="width:50px;height:30px"></p>
 
-                        <p><button type="button" class="btn btn-primary btn-sm" onclick="validarbtnnaranja()"> Agregar </button></button><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a></p>
+                        <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnmanzana(), carritollleno()"> Agregar a Carrito </button></button>
+                        </p>
+                    </div>
+                    <div>
+                        <img src="img/comida/huevos.png" alt="">
+                        <p><label>Huevos</label></P>
+                        <p><label>Precio: $ 350 Unidad</label>
+                            <p><label>Unidades a Comprar:</label>
+                                <input type="number" id="cnaranja" value="0" style="width:50px;height:30px"></p>
 
-                </div>
-                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
-                    <p>
-                        <a href=""><img class="img-fluid z-depth-1" src="img/comida/manzanapostobonlitro.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
-                    </p>
-                    <p><label>Gaseosa</label></P>
-                    <p><label>Precio: $ 2000 Litro</label>
+                            <p><button type="button" class="btn btn-primary btn-sm" onclick="validarbtnnaranja()"> Agregar a Carrito </button></button>
+                            </p>
+                    </div>
+                    <div>
+                        <img src="img/comida/manzanapostobonlitro.png" alt="">
+                        <p><label>Gaseosa</label></P>
+                        <p><label>Precio: $ 2000 Litro</label>
 
-                        <p><label>Unidades a Comprar:</label>
-                            <input type="number" id="cuva" value="0" style="width:50px;height:30px"></p>
-                        <p><button type="button" class="btn btn-primary btn-sm" onclick="validarbtnuva()"> Agregar </button></button><a class="btn btn-warning btn-sm js-scroll-trigger" href="https://wa.me/573117379576"><strong>Mensaje</strong></a></p>
+                            <p><label>Unidades a Comprar:</label>
+                                <input type="number" id="cuva" value="0" style="width:50px;height:30px"></p>
+                            <p><button type="button" class="btn btn-primary btn-sm" onclick="validarbtnuva()"> Agregar a Carrito </button></button>
+                            </p>
+                    </div>
 
-                </div>
+
+                </section>
             </div>
+            <div class="col-12 col-ms-12 col-md-12 col-lg-6 col-xl-6">
+                <h5 id="vestuario"><strong>Vestuario</strong></h5>
+                <section class="lazy2 slider">
+                    <div>
+                        <img src="img/coder_shirts/a1.png" alt="">
+                    </div>
+                    <div>
+                        <img src="img/coder_shirts/a2.png" alt="">
+                    </div>
+                    <div>
+                        <img src="img/coder_shirts/a3.png" alt="">
+                    </div>
 
 
+
+                </section>
+            </div>
         </div>
-    </section>
+    </div>
+    <!--Fin SlickSlider-->
     <hr>
     <section id="carrito">
         <div class="container">
@@ -431,7 +485,26 @@
         <a href="https://www.instagram.com/buroprojekt/" id="link"> <i class="fa fa-instagram" style="font-size:20px;color:red"></i></a>
         2021
     </footer>
+    <!--SlickSlider-->
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 
+    <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        $(document).on('ready', function() {
+
+
+            $(".lazy").slick({
+                lazyLoad: 'ondemand', // ondemand progressive anticipated
+                infinite: true
+            });
+            $(".lazy2").slick({
+                lazyLoad: 'ondemand', // ondemand progressive anticipated
+                infinite: true
+            });
+        });
+    </script>
+    <!--Fin SlickSlider-->
 </body>
 
 </html>
