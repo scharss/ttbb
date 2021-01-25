@@ -21,7 +21,7 @@
     <!--<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js">
     </script>-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="index3.js"></script>
 
     <link href="css/main.css" rel="stylesheet" type="text/css" />
     <link href="css/mains.scss" rel="stylesheet" type="text/css" />
@@ -223,19 +223,19 @@
     <div class="mySlides fade">
         <div class="numbertext">1 / 3</div>
         <img src="img/slider2.png" style="width:100%">
-        
+
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">2 / 3</div>
         <img src="img/slider3.png" style="width:100%">
-       
+
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">3 / 3</div>
         <img src="img/slider1.png" style="width:100%">
-        
+
     </div>
 
     </div>
@@ -305,6 +305,37 @@
                             <p><button type="button" class="btn btn-primary btn-sm" onclick="validarbtnuva()"> Agregar a Carrito </button></button>
                             </p>
                     </div>
+                    <div>
+                        <img src="img/comida/ARROZ DIANAx500g x$ 1600.png" alt="">
+                        <p><label>Arroz Diana</label></P>
+                        <p><label>Precio: $1.600 x 500g </label></P>
+                        <p><label>Unidades a Comprar:</label>
+                            <input type="number" id="cArrozDiana" value="0" style="width:50px;height:30px"></p>
+
+                        <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnArrozDiana(), carritollleno()"> Agregar a Carrito </button></button>
+                        </p>
+                    </div>
+                    <div>
+                        <img src="img/comida/ARROZ DIANA ARROBAx12500g$ 37.500.png" alt="">
+                        <p><label>Arroz Diana</label></P>
+                        <p><label>Precio: $ 37500 Arroba</label>
+                            <p><label>Unidades a Comprar:</label>
+                                <input type="number" id="cARROZDIANAARROBA" value="0" style="width:50px;height:30px"></p>
+
+                            <p><button type="button" class="btn btn-primary btn-sm" onclick="validarbtnARROZDIANAARROBA(), carritollleno()"> Agregar a Carrito </button></button>
+                            </p>
+                    </div>
+                    <div>
+                        <img src="img/comida/ARROZ ROAx 500g$ 1650.png" alt="">
+                        <p><label>Arroz Roa</label></P>
+                        <p><label>Precio: $ 1650 500g</label>
+
+                            <p><label>Unidades a Comprar:</label>
+                                <input type="number" id="cARROZROA500g" value="0" style="width:50px;height:30px"></p>
+                            <p><button type="button" class="btn btn-primary btn-sm" onclick="validarbtnARROZROA500g(), carritollleno()"> Agregar a Carrito </button></button>
+                            </p>
+                    </div>
+
 
 
                 </section>
@@ -358,22 +389,34 @@
                     <p id="nombremanzana"></p>
                     <p id="nombrenaranja"></p>
                     <p id="nombruva"></p>
+                    <p id="nombreArrozDiana"></p>
+                    <p id="nombreARROZDIANAARROBA"></p>
+                    <p id="nombreARROZROA500g"></p>
                 </div>
 
                 <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
                     <p id="totalmanzanas"></p>
                     <p id="totalnaranjas"></p>
                     <p id="totaluvas"></p>
+                    <p id="totalArrozDiana"></p>
+                    <p id="totalARROZDIANAARROBA"></p>
+                    <p id="totalARROZROA500g"></p>
                 </div>
                 <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
                     <p id="costomanzanas"></p>
                     <p id="costonaranjas"></p>
                     <p id="costouvas"></p>
+                    <p id="costoArrozDiana"></p>
+                    <p id="costoARROZDIANAARROBA"></p>
+                    <p id="costoARROZROA500g"></p>
                 </div>
                 <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
                     <p id="borrarmanzanas"></p>
                     <p id="borrarnaranjas"> </p>
                     <p id="borraruvas"> </p>
+                    <p id="borrarArrozDiana"> </p>
+                    <p id="borrarARROZDIANAARROBA"> </p>
+                    <p id="borrarARROZROA500g"> </p>
                 </div>
             </div>
         </div>
@@ -391,6 +434,8 @@
                 <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
 
                 </div>
+
+
                 <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
                     <strong><label>Total</label></strong> <strong><p id="Total"></p></strong>
                 </div>
@@ -428,7 +473,13 @@
                     <input type="hidden" class="form-control" id="numerodeuvas" name="Uvas" placeholder="">
                     <br/>
                     <input type="hidden" class="form-control" id="numerodenaranjas" name="Naranjas" placeholder="">
-                    <br>
+                    <br/>
+                    <input type="hidden" class="form-control" id="numerodeArrozDiana" name="ArrozDianax500g" placeholder="">
+                    <br/>
+                    <input type="hidden" class="form-control" id="numerodeARROZDIANAARROBA" name="ARROZDIANAARROBA" placeholder="">
+                    <br/>
+                    <input type="hidden" class="form-control" id="numerodeARROZROA500g" name="ARROZROA500g" placeholder="">
+                    <br/>
                 </form>
                 <button class="btn btn-primary btn-sm " onclick="SubForm()">Comprar</button>
                 <button type="button" class="btn btn-dark btn-sm" onclick="restear()">Reset</button>
@@ -465,7 +516,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js ">
     </script>
-    <script type="text/javascript " src="index.js "></script>
+    <script type="text/javascript " src="index3.js "></script>
 
     <!--
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js " integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n " crossorigin="anonymous "></script>-->
