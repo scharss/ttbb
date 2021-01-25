@@ -7,27 +7,7 @@ var precionaranja = 350;
 var preciouva = 2000;
 
 
-/*
 
-function crearusuario(manzana, cmanzana) {
-    var manzana = document.getElementById("manzana").value;
-    var cmanzana = document.getElementById("cmanzana").value;
-    console.log(counter);
-    counter += 1;
-    console.log(counter);
-    var usuario = {
-        id: counter,
-        manzana: manzana,
-        cmanzana: cmanzana
-
-    }
-    let db = firebase.database().ref("usuario/" + counter);
-    db.set(usuario);
-    document.getElementById("manzana").innerHTML = '';
-    document.getElementById("cmanzana").innerHTML = '';
-
-}
-console.log(t);*/
 
 function manzana() {
     document.getElementById("nombremanzana").innerHTML = "Harina Pan"
@@ -35,7 +15,7 @@ function manzana() {
     document.getElementById("totalmanzanas").innerHTML = candidadmanzana;
     var costomanzana = candidadmanzana * preciomanzana;
     document.getElementById("costomanzanas").innerHTML = costomanzana;
-    document.getElementById("borrarmanzanas").innerHTML = `<p><button type="button" class="btn btn-danger" onclick="restarmanzana(), borrarmanzanas()"><i class="fa fa-trash"></i></button></p>`
+    document.getElementById("borrarmanzanas").innerHTML = `<p><button type="button" class="btn btn-danger btn-sm" onclick="restarmanzana(), borrarmanzanas()"><i class="fa fa-trash"></i></button></p>`
     document.getElementById("numerodemanzanas").value = candidadmanzana;
 }
 
@@ -56,7 +36,7 @@ function naranja() {
     document.getElementById("totalnaranjas").innerHTML = candidadmanzana;
     var costomanzana = candidadmanzana * precionaranja;
     document.getElementById("costonaranjas").innerHTML = costomanzana;
-    document.getElementById("borrarnaranjas").innerHTML = `<p><button type="button" class="btn btn-danger" onclick="restarnaranja(), borrarnaranjas()"><i class="fa fa-trash"></i></button></p>`
+    document.getElementById("borrarnaranjas").innerHTML = `<p><button type="button" class="btn btn-danger btn-sm" onclick="restarnaranja(), borrarnaranjas()"><i class="fa fa-trash"></i></button></p>`
     document.getElementById("numerodenaranjas").value = candidadmanzana;
 }
 
@@ -77,7 +57,7 @@ function uva() {
     document.getElementById("totaluvas").innerHTML = candidadmanzana;
     var costomanzana = candidadmanzana * preciouva;
     document.getElementById("costouvas").innerHTML = costomanzana;
-    document.getElementById("borraruvas").innerHTML = `<p><button type="button" class="btn btn-danger" onclick="restaruva(), borraruvas()"><i class="fa fa-trash"></i></button></p>`
+    document.getElementById("borraruvas").innerHTML = `<p><button type="button" class="btn btn-danger btn-sm" onclick="restaruva(), borraruvas()"><i class="fa fa-trash"></i></button></p>`
     document.getElementById("numerodeuvas").value = candidadmanzana;
 }
 
@@ -93,9 +73,19 @@ function borraruvas() {
 
 function totalPagar() {
     var nummanzanas = Number(document.getElementById("cmanzana").value) * preciomanzana;
+
     var numnaranjas = Number(document.getElementById("cnaranja").value) * precionaranja;
+
     var numuvas = Number(document.getElementById("cuva").value) * preciouva;
-    var totalpagar = nummanzanas + numnaranjas + numuvas;
+
+    var numarrozdiana500g = Number(document.getElementById("cArrozDiana").value) * precioArrozDiana;
+
+    var numARROZDIANAARROBA = Number(document.getElementById("cARROZDIANAARROBA").value) * precioARROZDIANAARROBA;
+
+
+    var numARROZROA500g = Number(document.getElementById("cARROZROA500g").value) * precioARROZROA500g;
+
+    var totalpagar = nummanzanas + numnaranjas + numuvas + numarrozdiana500g + numARROZDIANAARROBA + numARROZROA500g;
     return document.getElementById("Total").innerHTML = totalpagar;
 
 }
@@ -175,3 +165,129 @@ function restear() {
 function carritollleno() {
     document.getElementById("vacio").innerHTML = " ";
 }
+
+
+/**ArrozDianax500g**/
+var precioArrozDiana = 1600;
+
+function ArrozDiana() {
+    document.getElementById("nombreArrozDiana").innerHTML = "ArrozDiana"
+    var candidadArrozDiana = Number(document.getElementById("cArrozDiana").value);
+    document.getElementById("totalArrozDiana").innerHTML = candidadArrozDiana;
+    var costoArrozDiana = candidadArrozDiana * precioArrozDiana;
+    document.getElementById("costoArrozDiana").innerHTML = costoArrozDiana;
+    document.getElementById("borrarArrozDiana").innerHTML = `<p><button type="button" class="btn btn-danger btn-sm" onclick="restarArrozDiana(), borrarArrozDiana()"><i class="fa fa-trash"></i></button></p>`
+    document.getElementById("numerodeArrozDiana").value = candidadArrozDiana;
+}
+
+function borrarArrozDiana() {
+    document.getElementById("nombreArrozDiana").innerHTML = " ";
+    document.getElementById("totalArrozDiana").innerHTML = " ";
+    document.getElementById("costoArrozDiana").innerHTML = " ";
+    document.getElementById("borrarArrozDiana").innerHTML = " ";
+    document.getElementById("cArrozDiana").value = 0;
+    document.getElementById("numerodeArrozDiana").value = 0;
+
+}
+
+function restarArrozDiana() {
+    var totales = totalPagar()
+    var menosArrozDiana = totales - (Number(document.getElementById("cArrozDiana").value) * precioArrozDiana);
+    return document.getElementById("Total").innerHTML = menosArrozDiana;
+}
+
+
+function validarbtnArrozDiana() {
+    if ((Number(document.getElementById("cArrozDiana").value) * precioArrozDiana) == 0 || (Number(document.getElementById("cArrozDiana").value) * precioArrozDiana) < 0) {
+        alert("la Cantidad es cero o negativa");
+        document.getElementById("cArrozDiana").value = 0;
+    } else {
+        ArrozDiana();
+        totalPagar();
+    }
+}
+/**fin ArrozDianas**/
+
+
+
+//ARROZDIANAARROBAs
+var precioARROZDIANAARROBA = 37500;
+
+function ARROZDIANAARROBA() {
+
+    document.getElementById("nombreARROZDIANAARROBA").innerHTML = "ArrozDiana "
+    var candidadArrozDiana = Number(document.getElementById("cARROZDIANAARROBA").value);
+    document.getElementById("totalARROZDIANAARROBA").innerHTML = candidadArrozDiana;
+    var costoArrozDiana = candidadArrozDiana * precioARROZDIANAARROBA;
+    document.getElementById("costoARROZDIANAARROBA").innerHTML = costoArrozDiana;
+    document.getElementById("borrarARROZDIANAARROBA").innerHTML = `<p><button type="button" class="btn btn-danger btn-sm" onclick="restarARROZDIANAARROBA(), borrarARROZDIANAARROBA()"><i class="fa fa-trash"></i></button></p>`
+    document.getElementById("numerodeARROZDIANAARROBA").value = candidadArrozDiana;
+}
+
+function borrarARROZDIANAARROBA() {
+    document.getElementById("nombreARROZDIANAARROBA").innerHTML = " ";
+    document.getElementById("totalARROZDIANAARROBA").innerHTML = " ";
+    document.getElementById("costoARROZDIANAARROBA").innerHTML = " ";
+    document.getElementById("borrarARROZDIANAARROBA").innerHTML = " ";
+    document.getElementById("cARROZDIANAARROBA").value = 0;
+    document.getElementById("numerodeARROZDIANAARROBAs").value = 0;
+
+}
+
+function restarARROZDIANAARROBA() {
+    var totales = totalPagar()
+    var menosArrozDiana = totales - (Number(document.getElementById("cARROZDIANAARROBA").value) * precioARROZDIANAARROBA);
+    return document.getElementById("Total").innerHTML = menosArrozDiana;
+}
+
+function validarbtnARROZDIANAARROBA() {
+    if ((Number(document.getElementById("cARROZDIANAARROBA").value) * precioARROZDIANAARROBA) == 0 || (Number(document.getElementById("cARROZDIANAARROBA").value) * precioARROZDIANAARROBA) < 0) {
+        alert("la Cantidad es cero o negativa");
+        document.getElementById("cARROZDIANAARROBA").value = 0;
+    } else {
+        ARROZDIANAARROBA();
+        totalPagar();
+    }
+}
+//Fin ARROZDIANAARROBAs
+
+//ARROZROA500gs
+var precioARROZROA500g = 1650;
+
+function ARROZROA500g() {
+
+    document.getElementById("nombreARROZROA500g").innerHTML = "ArrozRoa"
+    var candidadArrozDiana = Number(document.getElementById("cARROZROA500g").value);
+    document.getElementById("totalARROZROA500g").innerHTML = candidadArrozDiana;
+    var costoArrozDiana = candidadArrozDiana * precioARROZROA500g;
+    document.getElementById("costoARROZROA500g").innerHTML = costoArrozDiana;
+    document.getElementById("borrarARROZROA500g").innerHTML = `<p><button type="button" class="btn btn-danger btn-sm" onclick="restarARROZROA500g(), borrarARROZROA500gs()"><i class="fa fa-trash"></i></button></p>`
+    document.getElementById("numerodeARROZROA500g").value = candidadArrozDiana;
+}
+
+function borrarARROZROA500gs() {
+    document.getElementById("nombreARROZROA500g").innerHTML = " ";
+    document.getElementById("totalARROZROA500g").innerHTML = " ";
+    document.getElementById("costoARROZROA500g").innerHTML = " ";
+    document.getElementById("borrarARROZROA500gs").innerHTML = " ";
+    document.getElementById("cARROZROA500g").value = 0;
+    document.getElementById("numerodeARROZROA500g").value = 0;
+
+}
+
+function restarARROZROA500g() {
+    var totales = totalPagar()
+    var menosArrozDiana = totales - (Number(document.getElementById("cARROZROA500g").value) * precioARROZROA500g);
+    return document.getElementById("Total").innerHTML = menosArrozDiana;
+}
+
+function validarbtnARROZROA500g() {
+    if ((Number(document.getElementById("cARROZROA500g").value) * precioARROZROA500g) == 0 || (Number(document.getElementById("cARROZROA500g").value) * precioARROZROA500g) < 0) {
+        alert("la Cantidad es cero o negativa");
+        document.getElementById("cARROZROA500g").value = 0;
+    } else {
+        ARROZROA500g();
+        totalPagar();
+    }
+}
+//fin ARROZROA500g
