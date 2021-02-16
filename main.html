@@ -27,7 +27,7 @@
     <link href="css/main.css" rel="stylesheet" type="text/css" />
     <link href="css/mains.scss" rel="stylesheet" type="text/css" />
 
-    <link rel="stylesheet" href="index.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         * {
@@ -301,9 +301,9 @@
                                 <p><label>Precio: $ 15.000 Combo</label></P>
                                 <p><label>Unidades:</label>
                                 </strong>
-                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+                                <input type="number" id="chuevo" value="0" style="width:50px;height:30px"></p>
 
-                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" huevo.validararticulo()"> Agregar a Carrito </button></button>
                                 </p>
                             </div>
                         </div>
@@ -635,37 +635,25 @@
             <div class="row">
 
                 <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
-                    <p id="nombreharinapan"></p>
-                    <p id="nombrenaranja"></p>
-                    <p id="nombruva"></p>
-                    <p id="nombreArrozDiana"></p>
-                    <p id="nombreARROZDIANAARROBA"></p>
-                    <p id="nombreARROZROA500g"></p>
+                    <p id="harinapan"></p>
+                    <p id="nombrehuevo"></p>
+
                 </div>
 
                 <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
                     <p id="totalharinapans"></p>
-                    <p id="totalnaranjas"></p>
-                    <p id="totaluvas"></p>
-                    <p id="totalArrozDiana"></p>
-                    <p id="totalARROZDIANAARROBA"></p>
-                    <p id="totalARROZROA500g"></p>
+                    <p id="totalhuevos"></p>
+
                 </div>
                 <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
                     <p id="costoharinapans"></p>
-                    <p id="costonaranjas"></p>
-                    <p id="costouvas"></p>
-                    <p id="costoArrozDiana"></p>
-                    <p id="costoARROZDIANAARROBA"></p>
-                    <p id="costoARROZROA500g"></p>
+                    <p id="costohuevos"></p>
+
                 </div>
                 <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
                     <p id="borrarharinapans"></p>
-                    <p id="borrarnaranjas"> </p>
-                    <p id="borraruvas"> </p>
-                    <p id="borrarArrozDiana"> </p>
-                    <p id="borrarARROZDIANAARROBA"> </p>
-                    <p id="borrarARROZROA500g"> </p>
+                    <p id="borrarhuevos"> </p>
+
                 </div>
             </div>
         </div>
@@ -719,16 +707,12 @@
                     <br/>
                     <input type="hidden" class="form-control" id="numerodeharinapans" name="harinapans" placeholder="" />
                     <br/>
-                    <input type="hidden" class="form-control" id="numerodeuvas" name="Uvas" placeholder="">
+
+                    <input type="hidden" class="form-control" id="numerodehuevos" name="huevos" placeholder="">
                     <br/>
-                    <input type="hidden" class="form-control" id="numerodenaranjas" name="Naranjas" placeholder="">
-                    <br/>
-                    <input type="hidden" class="form-control" id="numerodeArrozDiana" name="ArrozDianax500g" placeholder="">
-                    <br/>
-                    <input type="hidden" class="form-control" id="numerodeARROZDIANAARROBA" name="ARROZDIANAARROBA" placeholder="">
-                    <br/>
-                    <input type="hidden" class="form-control" id="numerodeARROZROA500g" name="ARROZROA500g" placeholder="">
-                    <br/>
+
+
+
                 </form>
                 <button class="btn btn-primary btn-sm " onclick="SubForm()">Comprar</button>
                 <button type="button" class="btn btn-dark btn-sm" onclick="restear()">Reset</button>
