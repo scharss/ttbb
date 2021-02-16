@@ -1,7 +1,7 @@
 class articulo {
-    constructor(nombrearticulo, nombrecomercial, precioarticulo, carticulo, totalarticulo, costoarticulo, borrararticulo, numeroarticulo) {
+    constructor(nombrearticulo, precioarticulo, carticulo, totalarticulo, costoarticulo, borrararticulo, numeroarticulo) {
         this.nombrearticulo = nombrearticulo;
-        this.nombrecomercial = nombrecomercial;
+
         this.carticulo = carticulo;
         this.totalarticulo = totalarticulo;
         this.costoarticulo = costoarticulo;
@@ -9,7 +9,7 @@ class articulo {
         this.numeroarticulo = numeroarticulo;
         this.precioarticulo = precioarticulo;
         this.articulo1 = function() {
-            document.getElementById(this.nombrearticulo).innerHTML = this.nombrecomercial;
+            document.getElementById(this.nombrearticulo).innerHTML = this.nombrearticulo;
             var vcandidadarticulo = Number(document.getElementById(this.carticulo).value);
             document.getElementById(this.totalarticulo).innerHTML = vcandidadarticulo;
             var vcostoarticulo = vcandidadarticulo * this.precioarticulo;
@@ -54,7 +54,7 @@ function totalPagar() {
 
 }
 
-var harinapan = new articulo("harinapan", "Harina Pan", 1800, "charinapan", "totalharinapans", "costoharinapans", "borrarharinapans", "numerodeharinapans");
-console.log(harinapan.fborrararticulo)
+var harinapan = new articulo("harinapan", 1800, "charinapan", "totalharinapans", "costoharinapans", "borrarharinapans", "numerodeharinapans");
 
-var huevo = new articulo("nombrehuevo", "Huevo", 350, "chuevo", "totalhuevos", "costohuevos", "borrarhuevos", "numerodehuevos");
+
+var huevo = new articulo("huevo", 350, "chuevo", "totalhuevos", "costohuevos", "borrarhuevos", "numerodehuevos");
