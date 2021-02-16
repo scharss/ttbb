@@ -8,13 +8,13 @@ class articulo {
         this.borrararticulo = borrararticulo;
         this.numeroarticulo = numeroarticulo;
         this.precioarticulo = precioarticulo;
-        this.articulo = function() {
+        this.articulo1 = function() {
             document.getElementById(this.nombrearticulo).innerHTML = this.nombrecomercial;
             var vcandidadarticulo = Number(document.getElementById(this.carticulo).value);
             document.getElementById(this.totalarticulo).innerHTML = vcandidadarticulo;
             var vcostoarticulo = vcandidadarticulo * this.precioarticulo;
             document.getElementById(this.costoarticulo).innerHTML = vcostoarticulo;
-            document.getElementById(this.borrararticulo).innerHTML = `<p><button type="button" class="btn btn-danger btn-sm" onclick="this.frestararticulo, this.fborrararticulo"><i class="fa fa-trash"></i></button></p>`
+            document.getElementById(this.borrararticulo).innerHTML = `<p><button type="button" class="btn btn-danger btn-sm" onclick="${this.nombrearticulo}.frestararticulo(), ${this.nombrearticulo}.fborrararticulo()"><i class="fa fa-trash"></i></button></p>`
             document.getElementById(this.numeroarticulo).value = vcandidadarticulo;
         }
         this.fborrararticulo = function() {
@@ -35,7 +35,7 @@ class articulo {
                 alert("la Cantidad es cero o negativa");
                 document.getElementById(this.carticulo).value = 0;
             } else {
-                this.articulo();
+                this.articulo1();
                 totalPagar();
             }
         }
@@ -44,23 +44,17 @@ class articulo {
 }
 
 function totalPagar() {
-    var numharinapans = Number(document.getElementById("charinapan").value) * precioharinapan;
+    var numharinapans = Number(document.getElementById("charinapan").value) * harinapan.precioarticulo;
 
-    var numnaranjas = Number(document.getElementById("cnaranja").value) * precionaranja;
-
-    var numuvas = Number(document.getElementById("cuva").value) * preciouva;
-
-    var numarrozdiana500g = Number(document.getElementById("cArrozDiana").value) * precioArrozDiana;
-
-    var numARROZDIANAARROBA = Number(document.getElementById("cARROZDIANAARROBA").value) * precioARROZDIANAARROBA;
+    var numhuevos = Number(document.getElementById("chuevo").value) * huevo.precioarticulo;
 
 
-    var numARROZROA500g = Number(document.getElementById("cARROZROA500g").value) * precioARROZROA500g;
-
-    var totalpagar = numharinapans + numnaranjas + numuvas + numarrozdiana500g + numARROZDIANAARROBA + numARROZROA500g;
+    var totalpagar = numharinapans + numhuevos;
     return document.getElementById("Total").innerHTML = totalpagar;
 
 }
 
-var harinapan = new articulo("nombreharinapan", "Harina Pan", 1600, "charinapan", "totalharinapans", "costoharinapans", "borrarharinapans", "numerodeharinapans");
-console.log(harinapan.precioarticulo)
+var harinapan = new articulo("harinapan", "Harina Pan", 1800, "charinapan", "totalharinapans", "costoharinapans", "borrarharinapans", "numerodeharinapans");
+console.log(harinapan.fborrararticulo)
+
+var huevo = new articulo("nombrehuevo", "Huevo", 350, "chuevo", "totalhuevos", "costohuevos", "borrarhuevos", "numerodehuevos");
